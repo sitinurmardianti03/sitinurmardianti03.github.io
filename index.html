@@ -1,89 +1,263 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Pages</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Pages</title>
 
-    <style>
-        :root {
-            --dark: #0f172a;
-            --text: #1e293b;
-            --muted: #64748b;
-            --accent1: #6366f1;
-            --accent2: #22d3ee;
-            --bg1: #f8fafc;
-            --bg2: #eef2ff;
+<style>
+:root {
+    --accent1: #6366f1;
+    --accent2: #22d3ee;
+    --text: #1e293b;
+    --muted: #64748b;
+    --bg1: #eef2ff;
+    --bg2: #f8fafc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", "Segoe UI", sans-serif;
+    background: linear-gradient(180deg, var(--bg1), var(--bg2));
+    color: var(--text);
+    line-height: 1.8;
+}
+
+/* HERO */
+header {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    background:
+        radial-gradient(circle at top, rgba(99,102,241,0.25), transparent 60%);
+}
+
+header h1 {
+    font-size: 56px;
+    font-weight: 600;
+    background: linear-gradient(90deg, var(--accent1), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 18px;
+}
+
+header p {
+    font-size: 20px;
+    color: var(--muted);
+    max-width: 760px;
+    margin: auto;
+}
+
+/* MAIN */
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 120px 24px;
+}
+
+section {
+    margin-bottom: 140px;
+}
+
+/* SCROLL ANIMATION */
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-left {
+    transform: translateX(-80px);
+}
+
+.reveal-right {
+    transform: translateX(80px);
+}
+
+/* TEXT */
+h2 {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 26px;
+    position: relative;
+}
+
+h2::after {
+    content: "";
+    width: 55px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent1), var(--accent2));
+    position: absolute;
+    left: 0;
+    bottom: -12px;
+    border-radius: 8px;
+}
+
+p {
+    font-size: 17px;
+    color: var(--muted);
+    text-align: justify;
+}
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.card {
+    padding: 40px;
+    border-radius: 20px;
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.9),
+        rgba(255,255,255,0.6)
+    );
+    backdrop-filter: blur(12px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-14px) scale(1.03);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.14);
+}
+
+.card h3 {
+    font-size: 22px;
+    margin-bottom: 14px;
+    font-weight: 500;
+    background: linear-gradient(90deg, var(--accent1), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 70px 20px;
+    font-size: 14px;
+    color: #94a3b8;
+    background: linear-gradient(
+        180deg,
+        transparent,
+        rgba(99,102,241,0.1)
+    );
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="reveal active">
+        <h1>GitHub Pages</h1>
+        <p>
+            Website statis dengan tampilan modern, animasi scroll interaktif,
+            dan desain minimalis yang elegan.
+        </p>
+    </div>
+</header>
+
+<main>
+
+<section class="reveal">
+    <h2>Tentang Halaman</h2>
+    <p>
+        Halaman ini dirancang untuk menampilkan konten secara terstruktur
+        dengan pendekatan visual yang bersih, modern, dan nyaman dibaca.
+        Setiap elemen dianimasikan secara halus mengikuti alur scroll.
+    </p>
+</section>
+
+<section class="reveal reveal-left">
+    <h2>Konsep Utama</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Minimalis</h3>
+            <p>
+                Fokus pada konten inti dengan tata letak bersih
+                dan penggunaan elemen visual yang seperlunya.
+            </p>
+        </div>
+        <div class="card">
+            <h3>Interaktif</h3>
+            <p>
+                Animasi scroll dan hover memberikan kesan hidup
+                tanpa mengganggu kenyamanan pengguna.
+            </p>
+        </div>
+        <div class="card">
+            <h3>Elegan</h3>
+            <p>
+                Gradasi warna lembut dan efek visual modern
+                menciptakan tampilan yang berkelas.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="reveal reveal-right">
+    <h2>Pengalaman Visual</h2>
+    <p>
+        Perpaduan animasi, warna, dan tipografi membantu pengguna
+        menikmati konten secara natural, mengikuti ritme scroll
+        yang halus dan terarah.
+    </p>
+</section>
+
+<section class="reveal">
+    <h2>Penutup</h2>
+    <p>
+        Desain yang sederhana namun detail dapat meningkatkan
+        kualitas visual sebuah website. Pendekatan ini menunjukkan
+        bahwa kesan profesional dapat dicapai tanpa kompleksitas berlebihan.
+    </p>
+</section>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 GitHub Pages</p>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
+    reveals.forEach(el => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        const elementVisible = 120;
+
+        if (elementTop < windowHeight - elementVisible) {
+            el.classList.add("active");
         }
+    });
+}
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+</script>
 
-        body {
-            font-family: "Inter", "Segoe UI", sans-serif;
-            background: linear-gradient(180deg, var(--bg2), var(--bg1));
-            color: var(--text);
-            line-height: 1.8;
-            overflow-x: hidden;
-        }
-
-        /* ANIMASI */
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        header {
-            min-height: 100vh;
-            background: radial-gradient(
-                circle at top,
-                rgba(99,102,241,0.25),
-                transparent 60%
-            );
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 20px;
-            animation: fadeUp 1.2s ease forwards;
-        }
-
-        header h1 {
-            font-size: 52px;
-            font-weight: 600;
-            letter-spacing: -1px;
-            margin-bottom: 18px;
-            background: linear-gradient(90deg, var(--accent1), var(--accent2));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        header p {
-            font-size: 20px;
-            color: var(--muted);
-            max-width: 720px;
-            margin: auto;
-        }
-
-        main {
-            max-width: 1000px;
-            margin: auto;
-            padding: 120px 24px;
-        }
-
-        section {
-            margin-bottom: 120px;
-            opacity: 0;
-            animation: fadeUp 1s ease forwards;
-        }
-
-        section:nth-child(1) {
+</body>
+</html>
