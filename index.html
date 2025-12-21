@@ -7,10 +7,13 @@
 
     <style>
         :root {
-            --primary: #111827;
-            --secondary: #475569;
-            --accent: #6366f1;
-            --bg: #f9fafb;
+            --dark: #0f172a;
+            --text: #1e293b;
+            --muted: #64748b;
+            --accent1: #6366f1;
+            --accent2: #22d3ee;
+            --bg1: #f8fafc;
+            --bg2: #eef2ff;
         }
 
         * {
@@ -21,17 +24,17 @@
 
         body {
             font-family: "Inter", "Segoe UI", sans-serif;
-            background-color: var(--bg);
-            color: var(--primary);
+            background: linear-gradient(180deg, var(--bg2), var(--bg1));
+            color: var(--text);
             line-height: 1.8;
             overflow-x: hidden;
         }
 
-        /* ANIMASI DASAR */
+        /* ANIMASI */
         @keyframes fadeUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(40px);
             }
             to {
                 opacity: 1;
@@ -41,6 +44,11 @@
 
         header {
             min-height: 100vh;
+            background: radial-gradient(
+                circle at top,
+                rgba(99,102,241,0.25),
+                transparent 60%
+            );
             display: flex;
             align-items: center;
             justify-content: center;
@@ -50,167 +58,32 @@
         }
 
         header h1 {
-            font-size: 48px;
+            font-size: 52px;
             font-weight: 600;
             letter-spacing: -1px;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
+            background: linear-gradient(90deg, var(--accent1), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         header p {
             font-size: 20px;
-            color: var(--secondary);
+            color: var(--muted);
             max-width: 720px;
             margin: auto;
         }
 
         main {
-            max-width: 960px;
+            max-width: 1000px;
             margin: auto;
-            padding: 100px 24px;
+            padding: 120px 24px;
         }
 
         section {
             margin-bottom: 120px;
             opacity: 0;
             animation: fadeUp 1s ease forwards;
-            animation-delay: 0.3s;
         }
 
-        section:nth-child(2) { animation-delay: 0.5s; }
-        section:nth-child(3) { animation-delay: 0.7s; }
-        section:nth-child(4) { animation-delay: 0.9s; }
-
-        h2 {
-            font-size: 28px;
-            font-weight: 500;
-            margin-bottom: 24px;
-            position: relative;
-        }
-
-        h2::after {
-            content: "";
-            width: 40px;
-            height: 2px;
-            background-color: var(--accent);
-            position: absolute;
-            left: 0;
-            bottom: -10px;
-        }
-
-        p {
-            font-size: 17px;
-            color: var(--secondary);
-            text-align: justify;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 32px;
-            margin-top: 40px;
-        }
-
-        .feature {
-            padding: 32px;
-            background-color: #ffffff;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-
-        .feature:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
-        }
-
-        .feature h3 {
-            margin-bottom: 12px;
-            font-size: 20px;
-            font-weight: 500;
-            color: var(--primary);
-        }
-
-        footer {
-            text-align: center;
-            padding: 50px 20px;
-            font-size: 14px;
-            color: #64748b;
-            border-top: 1px solid #e5e7eb;
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div>
-            <h1>GitHub Pages</h1>
-            <p>
-                Platform sederhana untuk membangun website statis
-                dengan pendekatan minimalis, modern, dan efisien.
-            </p>
-        </div>
-    </header>
-
-    <main>
-        <section>
-            <h2>Tentang Halaman</h2>
-            <p>
-                Halaman ini dirancang dengan prinsip kesederhanaan dan kejelasan visual.
-                Setiap elemen disusun secara terstruktur untuk menciptakan pengalaman
-                membaca yang nyaman, ringan, dan fokus pada konten.
-            </p>
-        </section>
-
-        <section>
-            <h2>Prinsip Desain</h2>
-            <div class="features">
-                <div class="feature">
-                    <h3>Minimal</h3>
-                    <p>
-                        Menghilangkan elemen yang tidak diperlukan
-                        untuk menjaga tampilan tetap bersih dan elegan.
-                    </p>
-                </div>
-                <div class="feature">
-                    <h3>Halus</h3>
-                    <p>
-                        Animasi ringan digunakan untuk memperkuat
-                        transisi tanpa mengganggu fokus pengguna.
-                    </p>
-                </div>
-                <div class="feature">
-                    <h3>Modern</h3>
-                    <p>
-                        Tata letak dan tipografi disesuaikan
-                        dengan standar desain web masa kini.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Manfaat</h2>
-            <p>
-                GitHub Pages memungkinkan publikasi website statis
-                secara cepat tanpa konfigurasi kompleks.
-                Hal ini menjadikannya solusi ideal untuk
-                dokumentasi, presentasi, dan eksperimen desain web.
-            </p>
-        </section>
-
-        <section>
-            <h2>Penutup</h2>
-            <p>
-                Pendekatan minimalis tidak hanya menciptakan
-                tampilan yang menarik, tetapi juga meningkatkan
-                keterbacaan dan performa halaman secara keseluruhan.
-            </p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 GitHub Pages</p>
-    </footer>
-
-</body>
-</html>
+        section:nth-child(1) {
